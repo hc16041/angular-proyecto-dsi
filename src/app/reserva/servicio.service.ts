@@ -7,17 +7,17 @@ import { Servicio } from './servicio';
   providedIn: 'root',
 })
 export class ServicioService {
-  private url: string = 'http://127.0.0.1:8000/reserva/servicio/';
+  private url: string = 'https://django-api-dsi.onrender.com/reserva/servicio';
   constructor(private http: HttpClient) {}
 
   // obtiene una lista de Servicios de la base
   getAll(): Observable<Servicio[]> {
-    return this.http.get<Servicio[]>(this.url );
+    return this.http.get<Servicio[]>(this.url);
   }
 
   // metodo que permite crear nuevo Servicio
   create(Servicio: Servicio): Observable<Servicio> {
-    return this.http.post<Servicio>(this.url , Servicio);
+    return this.http.post<Servicio>(this.url, Servicio);
   }
 
   // metodo que obtiene un solo Servicio
@@ -27,10 +27,7 @@ export class ServicioService {
 
   // metodo para actualizar Servicio
   update(Servicio: Servicio): Observable<Servicio> {
-    return this.http.put<Servicio>(
-      this.url  + Servicio.id + '/',
-     Servicio
-    );
+    return this.http.put<Servicio>(this.url + Servicio.id + '/', Servicio);
   }
   // metodo para eliminar Servicio
   delete(id?: number): Observable<Servicio> {

@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Empleado } from './empleado';
 import { Departamento } from '../departamento/departamento';
+import { Empleado } from './empleado';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EmpleadoService {
-  private url: string = 'http://127.0.0.1:8000/empleados';
+  private url: string = 'https://django-api-dsi.onrender.com/empleados/';
 
   constructor(private http: HttpClient) {}
 

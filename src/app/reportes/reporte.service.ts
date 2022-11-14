@@ -9,7 +9,7 @@ import { Reserva } from '../reserva/reserva';
   providedIn: 'root',
 })
 export class ReporteService {
-  private url: string = 'http://127.0.0.1:8000/';
+  private url: string = 'https://django-api-dsi.onrender.com/';
 
   constructor(private http: HttpClient) {}
 

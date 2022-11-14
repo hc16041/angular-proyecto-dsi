@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cargo } from '../cargo/cargo';
 
@@ -7,7 +7,7 @@ import { Cargo } from '../cargo/cargo';
   providedIn: 'root',
 })
 export class CargoService {
-  private url: string = 'http://127.0.0.1:8000/empleados';
+  private url: string = 'https://django-api-dsi.onrender.com/empleados/';
   constructor(private http: HttpClient) {}
 
   // obtener cargos

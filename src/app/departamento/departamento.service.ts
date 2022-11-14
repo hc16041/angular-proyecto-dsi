@@ -7,7 +7,7 @@ import { Departamento } from './departamento';
   providedIn: 'root',
 })
 export class DepartamentoService {
-  private url: string = 'http://127.0.0.1:8000/empleados';
+  private url: string = 'https://django-api-dsi.onrender.com/empleados/';
   constructor(private http: HttpClient) {}
 
   // obtener Departamentos

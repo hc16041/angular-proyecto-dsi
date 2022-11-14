@@ -9,9 +9,10 @@ import { Servicio } from './servicio';
   providedIn: 'root',
 })
 export class ReservaService {
-   private url: string = 'http://127.0.0.1:8000/reserva';
-   private url2: string = 'http://127.0.0.1:8000/reserva/servicio';
-   private url3: string = 'http://127.0.0.1:8000/habitacion/habitacion';
+  private url: string = 'https://django-api-dsi.onrender.com/reserva';
+  private url2: string = 'https://django-api-dsi.onrender.com/reserva/servicio';
+  private url3: string =
+    'https://django-api-dsi.onrender.com/habitacion/habitacion';
   constructor(private http: HttpClient) {}
 
   // obtiene una lista de reserva de la base
@@ -23,7 +24,7 @@ export class ReservaService {
     return this.http.get<Habitacion[]>(this.url3);
   }
 
-  getServicio(): Observable<Servicio[]>{
+  getServicio(): Observable<Servicio[]> {
     return this.http.get<Servicio[]>(this.url2);
   }
 

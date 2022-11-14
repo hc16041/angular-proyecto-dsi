@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Users } from './users';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { Users } from './users';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
-  private url: string = 'http://127.0.0.1:8000/users';
+  private url: string = 'https://django-api-dsi.onrender.com/users';
   constructor(private http: HttpClient) {}
 
   // obtiene una lista de usuario de la base
@@ -28,10 +27,7 @@ export class UsersService {
 
   // metodo para actualizar usuario
   update(Users: Users): Observable<Users> {
-    return this.http.put<Users>(
-      this.url + '/' + Users.id + '/',
-      Users
-    );
+    return this.http.put<Users>(this.url + '/' + Users.id + '/', Users);
   }
   // metodo para eliminar usuario
   delete(id?: number): Observable<Users> {
